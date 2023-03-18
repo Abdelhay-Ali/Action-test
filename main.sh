@@ -15,7 +15,8 @@ mkdir out
 cp vendor_sepolicy.cil /out/
 touch newfile
 ls
-set_output outfile newfile
+set_output outfile vendor_sepolicy.cil
 
+exit 0
 
 msg "Hello world"
