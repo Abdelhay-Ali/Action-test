@@ -13,8 +13,9 @@ set_output(){
 ls
 mkdir out
 cp vendor_sepolicy.cil /out/
+touch newfile
 ls
-set_output outfile out/vendor_sepolicy.cil
+set_output outfile newfile
 
 
 msg "Hello world"
