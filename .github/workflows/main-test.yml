@@ -1,0 +1,17 @@
+name: main-test
+on:
+  watch:
+    types: [started]
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+         chmod +x ./main.sh
+         ./main.sh
+      shell: bash
