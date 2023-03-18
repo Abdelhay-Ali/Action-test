@@ -11,7 +11,10 @@ set_output(){
 }
 
 ls
-set_output outfile /github/workspace/vendor_sepolicy.cil
+mkdir out
+cp vendor_sepolicy.cil /out/
+ls
+set_output outfile out/vendor_sepolicy.cil
 
 
 msg "Hello world"
