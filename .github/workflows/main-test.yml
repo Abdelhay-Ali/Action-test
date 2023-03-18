@@ -11,7 +11,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
+      id: build
       run: |
          chmod +x ./main.sh
          ./main.sh
       shell: bash
+      
+    - name: Release build
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: ${{ steps.build.outputs.outfile }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.ref }}
